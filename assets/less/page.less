@@ -12,9 +12,14 @@ body {
 	.clearfix();
 }
 .site-name {
+	text-align: center;
+	margin-top: -10px;
+	img {
+		height: 50px;
+	}
 	.grid(12,10);
 	.prefix(12,1);
-	.suffix(12,1);
+	.suffix(12,0.5);
 	margin-bottom: 1em;
 	float: none;
 	display: block;
@@ -27,11 +32,12 @@ body {
 	}
 	@media @1382px {
 		.grid(12,1.5);
-		.prefix(12,2);
+		.prefix(12,2.5);
+			.suffix(12,0.3);
 	}
 }
 .top-navigation {
-	.grid(12,10);
+	.grid(12,9.5);
 	.prefix(12,1);
 	.suffix(12,1);
 	margin-bottom: 1em;
@@ -43,7 +49,7 @@ body {
 		.suffix(12,0);
 	}
 	@media @1382px {
-		.grid(12,8);
+		.grid(12,7.5);
 	}
 	ul {
 		margin: 0;
@@ -350,13 +356,12 @@ width: 100%;
 	}
 }
 .author-social {
-  display: block;
+  display: inline;
+  text-align: center;
   margin-bottom: 5px;
-  .font-rem(14);
-  color: @black;
-  &:visited {
-    color: @black;
-  }
+  .font-rem(20);
+  color: #95a5a6;
+
   &:hover {
     .scale(1.1);
   }
@@ -368,6 +373,8 @@ width: 100%;
 	}
 }
 .article-author-side {
+		text-align: center;
+
 	display: none;
 	.bio-photo {
 		max-width: 110px;
@@ -377,10 +384,9 @@ width: 100%;
 		display: block;
 		.grid(12,2);
 		.prefix(12,0.5);
-		.suffix(12,0.5);
+		.suffix(12,0.3);
 		h3,
-		p,
-		.author-social {
+		p {
 			display: block;
 			max-width: 125px;
 		}
@@ -398,13 +404,12 @@ width: 100%;
 	@media @992px {
 		h3,
 		.bio-photo,
-		p,
-		.author-social {
-			max-width: 150px;
+		p {
+			max-width: 300px;
 		}
 	}
 	@media @1382px {
-		.grid(12,1);
+		.grid(12,1.5);
 		.prefix(12,2.5);
 	}
 }
@@ -420,14 +425,13 @@ width: 100%;
 		.rounded(150px);
 	}
 	.author-social {
-		display: inline-block;
+		display: inline;
 		margin-right: 10px;
 	}
 	@media @992px {
 		h3,
 		.bio-photo,
-		p,
-		.author-social {
+		p {
 			max-width: 150px;
 		}
 	}
