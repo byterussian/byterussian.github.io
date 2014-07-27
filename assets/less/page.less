@@ -15,9 +15,7 @@ body {
 	text-align: center;
 	margin-top: -10px;
 	border-right: 1px solid #dadada !important;
-	img {
-		height: 50px;
-	}
+
 	.grid(12,10);
 	.prefix(12,1);
 	.suffix(12,0.5);
@@ -26,12 +24,6 @@ body {
 	display: block;
 	.font-rem(24);
 	@media @600px {
-		.grid(12,2);
-		.prefix(12,0.5);
-		.suffix(12,0.5);
-		.font-rem(16);
-	}
-	@media @1382px {
 		.grid(12,1.5);
 		.prefix(12,2.5);
 		.suffix(12,0.3);
@@ -42,15 +34,15 @@ body {
 	.prefix(12,1);
 	.suffix(12,1);
 	margin-bottom: 1em;
-	float: none;
+	float: right !important;
 	display: block;
 	@media @600px {
-		.grid(12,9);
+		.grid(12,8);
 		.prefix(12,0);
 		.suffix(12,0);
 	}
 	@media @1382px {
-		.grid(12,7.5);
+		.grid(12,7.5, 'right');
 	}
 	ul {
 		margin: 0;
@@ -271,16 +263,22 @@ body {
 
 #about {
 	width: 100%;
-	margin-top: 2em;
+	margin-top: 1em;
 	margin-bottom: 4em;
 
 	h3 {
 		margin: 0;
 		padding-bottom: .5em;
-		.font-rem(28);
-		border-bottom: 1px solid lighten(@black,70);
+		.font-rem(42);
+		//border-bottom: 1px solid lighten(@black,70);
+		color: #1abc9c;
+
 	}
 	article {
+		h1 {
+			margin: 0 !important;
+			.font-rem(40) !important;
+		}
 		h2 {
 			margin-bottom: 4px;
 			.font-rem(20);

@@ -7,10 +7,10 @@ module.exports = function(grunt) {
         jshintrc: '.jshintrc'
       },
       all: [
-        'Gruntfile.js',
-        'assets/js/*.js',
-        '!assets/js/plugins/*.js',
-        '!assets/js/scripts.min.js'
+      'Gruntfile.js',
+      'assets/js/*.js',
+      '!assets/js/plugins/*.js',
+      '!assets/js/scripts.min.js'
       ]
     },
     recess: {
@@ -21,7 +21,7 @@ module.exports = function(grunt) {
         },
         files: {
           'assets/css/main.min.css': [
-            'assets/less/main.less'
+          'assets/less/main.less'
           ]
         }
       }
@@ -30,8 +30,8 @@ module.exports = function(grunt) {
       dist: {
         files: {
           'assets/js/scripts.min.js': [
-            'assets/js/plugins/*.js',
-            'assets/js/_*.js'
+          'assets/js/plugins/*.js',
+          'assets/js/_*.js'
           ]
         }
       }
@@ -45,42 +45,42 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           cwd: 'images/',
-          src: '{,*/}*.{png,jpg,jpeg}',
-          dest: 'images/'
-        }]
-      }
-    },
-    svgmin: {
-      dist: {
-        files: [{
-          expand: true,
-          cwd: 'images/',
-          src: '{,*/}*.svg',
-          dest: 'images/'
-        }]
-      }
-    },
-    watch: {
-      less: {
-        files: [
-          'assets/less/*.less'
-        ],
-        tasks: ['recess']
-      },
-      js: {
-        files: [
-          '<%= jshint.all %>'
-        ],
-        tasks: ['jshint','uglify']
-      }
-    },
-    clean: {
-      dist: [
-        'assets/css/main.min.css',
-        'assets/js/scripts.min.js'
-      ]
+        src: '{,*/}*.{png,jpg,jpeg}',
+        dest: 'images/'
+      }]
     }
-  });
+  },
+  svgmin: {
+    dist: {
+      files: [{
+        expand: true,
+        cwd: 'images/',
+      src: '{,*/}*.svg',
+      dest: 'images/'
+    }]
+  }
+},
+watch: {
+  less: {
+    files: [
+    'assets/less/*.less'
+    ],
+    tasks: ['recess']
+  },
+  js: {
+    files: [
+    '<%= jshint.all %>'
+    ],
+    tasks: ['jshint','uglify']
+  }
+},
+clean: {
+  dist: [
+  'assets/css/main.min.css',
+  'assets/js/scripts.min.js'
+  ]
+}
+});
 
   // Load tasks
   grunt.loadNpmTasks('grunt-contrib-clean');
@@ -90,7 +90,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-recess');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-svgmin');
-
+  grunt.loadNpmTasks('grunt-jekyll');
   // Register tasks
   grunt.registerTask('default', [
     'clean',
@@ -98,9 +98,9 @@ module.exports = function(grunt) {
     'uglify',
     'imagemin',
     'svgmin'
-  ]);
+    ]);
   grunt.registerTask('dev', [
     'watch'
-  ]);
+    ]);
 
 };
