@@ -16,18 +16,14 @@ body {
 	margin-top: -10px;
 	//border-right: 1px solid #dadada !important;
 
-	.grid(12,10);
-	.prefix(12,1);
+	.grid(12,1);
+	.prefix(12,0.5);
 	.suffix(12,0.5);
 	margin-bottom: 0.7em;
 	float: none;
 	display: block;
 	.font-rem(24);
-	@media @600px {
-		.grid(12,1.5);
-		.prefix(12,2.5);
-		.suffix(12,0.3);
-	}
+
 }
 .top-navigation {
 	.grid(12,4.5);
@@ -272,7 +268,7 @@ body {
 
 #about {
 	width: 100%;
-	margin-top: 0;
+	margin-top: 2em;
 	margin-bottom: 4em;
 	h3 {
 		margin: 0;
@@ -381,8 +377,9 @@ body {
 }
 .article-author-side {
 	text-align: center;
-	border-top: 1px solid #f4f4f4 !important;
-	border-right: 1px solid #f4f4f4 !important;
+	border-radius: 6px;
+	margin-top: -69px;
+	border: 4px solid #f4f4f4 !important;
 	background-color: #fafafa;
 	padding-bottom: 10px;
 	display: none;
